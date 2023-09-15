@@ -1,0 +1,16 @@
+#include <TridentTD_LineNotify.h>
+
+#define SSID "AAAA"     // ใส่ชื่อ Wifi ที่จะเชื่อมต่อ
+#define PASSWORD "AAAA" // ใส้รหัส Wifi
+#define TOKEN "AAAA"    // ใส่่ TOKEN ที่ Generate มา
+
+
+void setup() {
+  WiFi.begin(SSID, PASSWORD);            // เชื่อมต่อ Wifi
+  while (WiFi.status() != WL_CONNECTED); // ใช้ลูปเปล่ารอจนกว่า Wifiจะเชื่อมต่อเสร็จ
+  LINE.setToken(TOKEN);                  // เชื่อมต่อกับline notify ด้วย token
+  LINE.notify("ทดสอบการทำงาน");        // ส่งข้อความ
+
+void loop() {
+
+}
